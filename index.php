@@ -14,14 +14,11 @@ $twig = new \Twig\Environment($loader);
 $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $router) {
     $router->addRoute('GET', '/articles', ['App\Controllers\ArticleController', 'index']);
     $router->addRoute('GET', '/articles/{type}', ['App\Controllers\ArticleController', 'show']);
-
-    //var_dump($router->getData());
 });
 
 $httpMethod = $_SERVER['REQUEST_METHOD'];
 $uri = $_SERVER['REQUEST_URI'];
 
-// Strip query string (?foo=bar) and decode URI
 if (false !== $pos = strpos($uri, '?')) {
     $uri = substr($uri, 0, $pos);
 }
