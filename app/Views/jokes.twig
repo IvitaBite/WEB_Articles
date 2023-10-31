@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Page 2</title>
+    <style>
+        body {
+            background-color: orange;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 24px;
+        }
+
+        .setup, .punchline {
+            font-size: 30px;
+            text-align: center;
+        }
+
+        a {
+            margin: 10px 0;
+        }
+
+        .bottom {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            font-size: 20px;
+            padding: 200px 30px;
+        }
+    </style>
+</head>
+<body>
+<a href="/articles">Back to Page 1</a>
+<h1>Joke Category: {{ jokes.getType() }}</h1>
+<div class="container text-center">
+    <p class="setup"><strong>Setup:</strong> {{ jokes.getSetup() }}</p>
+    <p class="punchline"><strong>Punchline:</strong> {{ jokes.getPunchline() }}</p>
+</div>
+<div class="bottom">
+    <p>Date: {{ currentTime.format('d F Y') }}</p>
+    <p>Time: {{ currentTime.format('H:i') }}</p>
+</div>
+</body>
+</html>

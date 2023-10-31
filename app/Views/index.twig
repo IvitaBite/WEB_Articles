@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Articles</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-image: url('https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTA4L3Jhd3BpeGVsX29mZmljZV8yMl9oYWxsb3dlZW5fZnJhbWVfaXNvbGF0ZWRfb25fd2hpdGVfYmFja2dyb3VuZF9kYTRiOTgyMi1hYzMyLTQ4YmMtOWQ0Yi03OTM5NWVlZjRkZWFfMS5qcGc.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 50vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header-container {
+            text-align: center;
+            padding: 30px 0;
+        }
+
+        .button-container {
+            text-align: center;
+            padding: 50px 0;
+        }
+
+        .container-time {
+            text-align: center;
+            padding: 70px 0;
+        }
+
+        table {
+            margin: 0 auto;
+        }
+
+        th, td {
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="header-container">
+    <h1 style="text-align: center; font-weight: bold;">Joke Categories</h1>
+</div>
+<div class="button-container">
+    <table>
+        <tr>
+            <td><a href="/articles/dad" class="btn btn-warning">Dad</a></td>
+            <td><a href="/articles/programming" class="btn btn-warning">Programming</a></td>
+        </tr>
+        <tr>
+            <td><a href="/articles/knock-knock" class="btn btn-warning">Knock-Knock</a></td>
+            <td><a href="/articles/general" class="btn btn-warning">General</a></td>
+        </tr>
+    </table>
+</div>
+<div class="container-time">
+    <p>Current Date: {{ currentTime.format('d F Y') }}</p>
+    <p>Current Time: {{ currentTime.format('H:i') }}</p>
+</div>
+</body>
+</html>
