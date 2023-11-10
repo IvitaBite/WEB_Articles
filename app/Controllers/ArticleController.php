@@ -16,7 +16,9 @@ class ArticleController
 
     public function __construct()
     {
-        $this->client = new Client();
+        $this->client = new Client([
+            'verify' => false
+        ]);
     }
 
     public function index(array $vars): Response
@@ -28,7 +30,10 @@ class ArticleController
             "knock-knock"
         ];
         $currentDateTime = Carbon::now();
-        return new Response('index', ['categories' => $categories, 'currentTime' => $currentDateTime]);
+        return new Response('index', [
+            'categories' => $categories,
+            'currentTime' => $currentDateTime
+        ]);
     }
 
     public function show(array $vars): ?Response

@@ -8,8 +8,8 @@ use App\Response;
 use Twig\Loader\FilesystemLoader;
 use Twig\Environment;
 
-$loader = new \Twig\Loader\FilesystemLoader(__DIR__ . '/app/Views');
-$twig = new \Twig\Environment($loader);
+$loader = new FilesystemLoader(__DIR__ . '/app/Views');
+$twig = new Environment($loader);
 
 $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $router) {
     $router->addRoute('GET', '/articles', ['App\Controllers\ArticleController', 'index']);
